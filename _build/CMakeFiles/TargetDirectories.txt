@@ -1,4 +1,0 @@
-/home/reyne/ChayokSMedom/workspace/projects/lab06/_build/CMakeFiles/package.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab06/_build/CMakeFiles/package_source.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab06/_build/CMakeFiles/edit_cache.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab06/_build/CMakeFiles/rebuild_cache.dir

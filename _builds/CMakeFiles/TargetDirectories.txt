@@ -1,9 +1,0 @@
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/print.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/check.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/demo.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/edit_cache.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/rebuild_cache.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/list_install_components.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/install.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/install/local.dir
-/home/reyne/ChayokSMedom/workspace/projects/lab07/_builds/CMakeFiles/install/strip.dir

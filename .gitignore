@@ -1,0 +1,30 @@
+# Build directories
+_build/
+_builds/
+_logs/
+_install/
+
+# Temporary files
+*.swp
+*.tar.gz
+*.log
+
+# Docker logs
+logs/
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+CPackConfig.cmake
+CPackSourceConfig.cmake
+install_manifest.txt
+
+# Python
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
