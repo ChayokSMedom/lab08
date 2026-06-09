@@ -6,20 +6,21 @@ on:
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
+
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
     steps:
-- name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v4
 
-    - name: Build Docker image
+      - name: Build Docker image
         run: docker build -t logger .
-  - name: Test container
+
+      - name: Test container
         run: |
           mkdir -p logs
           echo "test message" > input.txt
           docker run --rm -v $(pwd)/logs:/home/logs logger < input.txt
           cat logs/log.txt | grep "test message"
-
