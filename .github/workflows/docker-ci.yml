@@ -1,6 +1,9 @@
 name: Docker CI
 
-on: [push]
+on: 
+  push:
+    branches: [ main, master, fix/docker-ci ]
+  workflow_dispatch:
 
 jobs:
   build-and-test:
@@ -13,21 +16,31 @@ jobs:
       - name: Build Docker image
         run: docker build -t logger .
 
-      - name: Create logs directory
-        run: mkdir -p logs
-
-      - name: Run container and write log
+      - name: Debug - Check what's inside the image
         run: |
-          echo "test message" | docker run --rm -i -v $(pwd)/logs:/home/logs logger
-          ls -la logs/
+          echo "=== Checking demo binary ==="
+          docker run --rm logger ls -la /app/_install/bin/ || echo "Path /app/_install/bin not found"
+          docker run --rm logger ls -la /print/_install/bin/ || echo "Path /print/_install/bin not found"
 
-      - name: Verify log file exists and contains message
+      - name: Debug - Check environment variable
         run: |
-          if [ -f logs/log.txt ]; then
-            cat logs/log.txt
-            cat logs/log.txt | grep "test message"
+          echo "=== Checking LOG_PATH ==="
+          docker run --rm logger printenv | grep LOG_PATH
+
+      - name: Test with explicit command
+        run: |
+          mkdir -p logs
+          docker run --rm -v $(pwd)/logs:/home/logs logger bash -c "echo 'test' | ./demo && cat /home/logs/log.txt"
+          echo "=== Log content ==="
+          cat logs/log.txt || echo "Log file not found"
+
+      - name: Verify test passed
+        run: |
+          if [ -f logs/log.txt ] && grep -q "test" logs/log.txt; then
             echo "y"
+            cat logs/log.txt
           else
             echo "n"
+            cat logs/log.txt || echo "No log file"
             exit 1
           fi
